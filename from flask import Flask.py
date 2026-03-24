@@ -1,0 +1,25 @@
+from flask import Flask
+import requests
+
+app = Flask(_name_)
+
+@app.route("/temperatura/<lat>/<lon>")
+def temperatura(lat, lon):
+   
+    url = f"https://api.open-meteo.com/v1/forecast?latitude={lon}&current=temperature_2m"
+
+    resposta = requests.get(url)
+    dados = resposta.json()
+
+    temp = dados["current"]["temperature_2m"]
+
+    return {
+        "latitude": lat,
+        "longitude": lon,
+        "temperatura": temp
+    }
+
+app.run(debug=True)    
+
+
+     
