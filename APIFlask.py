@@ -4,7 +4,7 @@ import requests
 # Definindo um APP:
 app = Flask(__name__)
 # uma chave para acessar a API - YouTube:
-api_key = "AIzaSyDvfc99RWFey0Ryo_kwkUp7-qBfJeyzUuw"
+api_key = "SUA_CHAVE_API"
 # Rota definida para /youtube/<busca>
 @app.route("/youtube/<busca>")
 def youtube(busca):
